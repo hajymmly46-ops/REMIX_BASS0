@@ -1,4 +1,11 @@
-const tracks = [];
+const tracks = [
+  {
+    title: "Delbarat Khande Kone",
+    artist: "REMIX BASS0",
+    category: "ریمیکس",
+    file: "assets/Delbarat Khande Kone (1).mp3"
+  }
+];
 
 const songsEl = document.getElementById("songs");
 const searchEl = document.getElementById("search");
