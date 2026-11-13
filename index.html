@@ -1,34 +1,99 @@
+
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="theme-color" content="#090711">
-  <title>REMIXBASS0 | دانلود آهنگ و ریمیکس</title>
-  <meta name="description" content="دانلود جدیدترین آهنگ‌ها و ریمیکس‌ها از REMIXBASS0">
+
+  <title>دانلود آهنگ و ریمیکس فارسی | REMIXBASS0</title>
+
+  <meta name="description" content="دانلود جدیدترین آهنگ‌های فارسی، ریمیکس، آهنگ شاد و غمگین از REMIXBASS0. Persian Music, New Remixes and Music Downloads.">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="REMIXBASS0">
+
+  <link rel="canonical" href="https://hajymmly46-ops.github.io/REMIX_BASS0/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="REMIXBASS0 | دانلود آهنگ و ریمیکس">
+  <meta property="og:description" content="جدیدترین آهنگ‌ها و ریمیکس‌های فارسی و ایرانی">
+  <meta property="og:url" content="https://hajymmly46-ops.github.io/REMIX_BASS0/">
+  <meta property="og:site_name" content="REMIXBASS0">
+  <meta property="og:locale" content="fa_IR">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="REMIXBASS0 Music">
+  <meta name="twitter:description" content="Persian Music, Remix and Bass Downloads">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "REMIXBASS0",
+    "alternateName": "ریمیکس بیس صفر",
+    "url": "https://hajymmly46-ops.github.io/REMIX_BASS0/",
+    "inLanguage": ["fa", "en"]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
   <header class="topbar">
-    <a class="brand" href="#"><span class="brand-mark">♫</span><span>REMIX<span class="purple">BASS0</span></span></a>
-    <a class="telegram small" href="https://t.me/REMIX_BASS0" target="_blank" rel="noopener">عضویت در کانال تلگرام ↗</a>
+    <a class="brand" href="#">
+      <span class="brand-mark">♫</span>
+      <span>REMIX<span class="purple">BASS0</span></span>
+    </a>
+
+    <a class="telegram small" href="https://t.me/REMIX_BASS0" target="_blank" rel="noopener">
+      عضویت در کانال تلگرام ↗
+    </a>
   </header>
 
   <main>
+
     <section class="hero">
       <div class="eyebrow">MUSIC • REMIX • BASS</div>
-      <h1>موزیکتو پیدا کن،<br><span>با بیس گوش کن!</span></h1>
-      <p>جدیدترین آهنگ‌ها و ریمیکس‌ها در REMIXBASS0</p>
-      <a class="telegram" href="https://t.me/REMIX_BASS0" target="_blank" rel="noopener">ورود به کانال تلگرام</a>
-      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+
+      <h1>دانلود آهنگ و ریمیکس فارسی<br>
+        <span>موزیکتو پیدا کن، با بیس گوش کن!</span>
+      </h1>
+
+      <p>
+        جدیدترین آهنگ‌های ایرانی، ریمیکس‌های شاد و غمگین
+        در REMIXBASS0
+      </p>
+
+      <a class="telegram" href="https://t.me/REMIX_BASS0" target="_blank" rel="noopener">
+        ورود به کانال تلگرام
+      </a>
+
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
     </section>
 
     <section class="content">
+
       <div class="section-head">
-        <div><span class="eyebrow">LATEST RELEASES</span><h2>آخرین آهنگ‌ها</h2></div>
+        <div>
+          <span class="eyebrow">LATEST RELEASES</span>
+          <h2>آخرین آهنگ‌ها | Latest Songs</h2>
+        </div>
+
         <span class="count" id="songCount">۰ آهنگ</span>
       </div>
-      <label class="search"><span>⌕</span><input id="search" type="search" placeholder="اسم آهنگ یا خواننده رو جستجو کن..."></label>
+
+      <label class="search">
+        <span>⌕</span>
+        <input id="search" type="search"
+          placeholder="اسم آهنگ یا خواننده رو جستجو کن...">
+      </label>
+
       <div class="chips">
         <button class="chip active" data-filter="همه">همه</button>
         <button class="chip" data-filter="ریمیکس">ریمیکس</button>
@@ -36,30 +101,68 @@
         <button class="chip" data-filter="شاد">شاد</button>
         <button class="chip" data-filter="غمگین">غمگین</button>
       </div>
+
       <div class="songs" id="songs"></div>
-      <p class="empty" id="empty">هنوز آهنگی اضافه نشده. فایل‌های آهنگت رو در فهرست <code>script.js</code> ثبت کن.</p>
+
+      <p class="empty" id="empty">
+        هنوز آهنگی اضافه نشده.
+      </p>
+
     </section>
 
     <section class="join">
       <div class="join-icon">♫</div>
-      <div><h2>ریمیکس‌های جدید رو از دست نده!</h2><p>برای دریافت آهنگ‌های تازه عضو کانال ما شو.</p></div>
-      <a class="telegram" href="https://t.me/REMIX_BASS0" target="_blank" rel="noopener">عضویت در کانال</a>
+
+      <div>
+        <h2>ریمیکس‌های جدید رو از دست نده!</h2>
+        <p>برای دریافت آهنگ‌های تازه عضو کانال ما شو.</p>
+      </div>
+
+      <a class="telegram" href="https://t.me/REMIX_BASS0"
+        target="_blank" rel="noopener">
+        عضویت در کانال
+      </a>
     </section>
+
   </main>
 
-  <footer>© 2026 REMIXBASS0 — ساخته‌شده برای عاشقان موزیک</footer>
+  <footer>
+    © 2026 REMIXBASS0 — ساخته‌شده برای عاشقان موزیک
+  </footer>
 
   <div class="gate" id="gate" aria-hidden="true">
     <div class="gate-box">
+
       <button class="close" id="closeGate" aria-label="بستن">×</button>
+
       <div class="gate-icon">♫</div>
+
       <h2>اول یه سر به کانال بزن!</h2>
-      <p>برای ادامه، وارد کانال تلگرام REMIXBASS0 شو. بعد از برگشت، دکمه ادامه دانلود رو بزن.</p>
-      <a class="telegram full" id="joinLink" href="https://t.me/REMIX_BASS0" target="_blank" rel="noopener">رفتن به کانال تلگرام ↗</a>
-      <button class="continue" id="continueDownload">برگشتم؛ ادامه دانلود</button>
-      <small>توجه: این روش عضویت واقعی را تأیید نمی‌کند؛ فقط کاربر را به کانال هدایت می‌کند.</small>
+
+      <p>
+        برای ادامه، وارد کانال تلگرام REMIXBASS0 شو.
+        بعد از برگشت، دکمه ادامه دانلود رو بزن.
+      </p>
+
+      <a class="telegram full" id="joinLink"
+        href="https://t.me/REMIX_BASS0"
+        target="_blank" rel="noopener">
+        رفتن به کانال تلگرام ↗
+      </a>
+
+      <button class="continue" id="continueDownload">
+        برگشتم؛ ادامه دانلود
+      </button>
+
+      <small>
+        این روش عضویت واقعی را تأیید نمی‌کند.
+      </small>
+
     </div>
   </div>
+
   <script src="script.js"></script>
+
 </body>
-</html>
+  </html>
+  
