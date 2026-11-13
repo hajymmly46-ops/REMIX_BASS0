@@ -2,19 +2,19 @@
 const tracks = [
   {
     title: "Delbarat Khande Kone",
+    persianTitle: "دلبرات خنده کن",
     artist: "REMIX BASS0",
     category: "ریمیکس",
     file: "assets/Delbarat Khande Kone (1).mp3"
   },
   {
     title: "Chapon Palangi",
+    persianTitle: "چاپون پلنگی",
     artist: "REMIX BASS0",
     category: "ریمیکس",
     file: "assets/chapon palangi (1).mp3"
   }
 ];
-
-
 
 const songsEl = document.getElementById("songs");
 const searchEl = document.getElementById("search");
@@ -28,17 +28,33 @@ const continueDownload = document.getElementById("continueDownload");
 let activeFilter = "همه";
 let selectedTrack = null;
 
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/ي/g, "ی")
+    .replace(/ك/g, "ک")
+    .replace(/ۀ/g, "ه")
+    .replace(/ة/g, "ه")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function renderSongs() {
-  const query = searchEl.value.trim().toLowerCase();
+  const query = normalizeText(searchEl.value);
 
   const filtered = tracks.filter(track => {
     const matchesFilter =
       activeFilter === "همه" ||
       track.category === activeFilter;
 
-    const matchesSearch =
-      track.title.toLowerCase().includes(query) ||
-      track.artist.toLowerCase().includes(query);
+    const searchableText = normalizeText([
+      track.title,
+      track.persianTitle,
+      track.artist,
+      track.category
+    ].join(" "));
+
+    const matchesSearch = searchableText.includes(query);
 
     return matchesFilter && matchesSearch;
   });
@@ -48,8 +64,7 @@ function renderSongs() {
   countEl.textContent =
     `${filtered.length.toLocaleString("fa-IR")} آهنگ`;
 
-  emptyEl.style.display =
-    filtered.length ? "none" : "block";
+  emptyEl.style.display = filtered.length ? "none" : "block";
 
   filtered.forEach(track => {
     const card = document.createElement("div");
@@ -63,18 +78,20 @@ function renderSongs() {
     info.className = "song-info";
 
     const title = document.createElement("strong");
-    title.textContent = track.title;
+    title.textContent = track.persianTitle;
+
+    const englishTitle = document.createElement("small");
+    englishTitle.textContent = track.title;
 
     const artist = document.createElement("small");
     artist.textContent = track.artist;
 
     const player = document.createElement("audio");
-player.controls = true;
-player.preload = "metadata";
-player.src = track.file;
-player.style.width = "100%";
+    player.controls = true;
+    player.preload = "metadata";
+    player.src = track.file;
 
-info.append(title, artist, player);
+    info.append(title, englishTitle, artist, player);
 
     const button = document.createElement("button");
     button.className = "download";
@@ -126,4 +143,4 @@ continueDownload.addEventListener("click", () => {
 });
 
 renderSongs();
-    
+  
