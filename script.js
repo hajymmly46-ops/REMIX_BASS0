@@ -59,7 +59,13 @@ function renderSongs() {
     const artist = document.createElement("small");
     artist.textContent = track.artist;
 
-    info.append(title, artist);
+    const player = document.createElement("audio");
+player.controls = true;
+player.preload = "metadata";
+player.src = track.file;
+player.style.width = "100%";
+
+info.append(title, artist, player);
 
     const button = document.createElement("button");
     button.className = "download";
