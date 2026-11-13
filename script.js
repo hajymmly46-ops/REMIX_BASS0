@@ -5,14 +5,16 @@ const tracks = [
     persianTitle: "دلبرات خنده کن",
     artist: "REMIX BASS0",
     category: "ریمیکس",
-    file: "assets/Delbarat Khande Kone (1).mp3"
+    file: "assets/Delbarat Khande Kone (1).mp3",
+    page: "delbarat-khande-kone.html"
   },
   {
     title: "Chapon Palangi",
     persianTitle: "چاپون پلنگی",
     artist: "REMIX BASS0",
     category: "ریمیکس",
-    file: "assets/chapon palangi (1).mp3"
+    file: "assets/chapon palangi (1).mp3",
+    page: "chapon-palangi.html"
   }
 ];
 
@@ -54,9 +56,7 @@ function renderSongs() {
       track.category
     ].join(" "));
 
-    const matchesSearch = searchableText.includes(query);
-
-    return matchesFilter && matchesSearch;
+    return matchesFilter && searchableText.includes(query);
   });
 
   songsEl.innerHTML = "";
@@ -80,6 +80,10 @@ function renderSongs() {
     const title = document.createElement("strong");
     title.textContent = track.persianTitle;
 
+    const pageLink = document.createElement("a");
+    pageLink.href = track.page;
+    pageLink.textContent = "صفحه اختصاصی آهنگ";
+    
     const englishTitle = document.createElement("small");
     englishTitle.textContent = track.title;
 
@@ -91,7 +95,7 @@ function renderSongs() {
     player.preload = "metadata";
     player.src = track.file;
 
-    info.append(title, englishTitle, artist, player);
+    info.append(title, pageLink, englishTitle, artist, player);
 
     const button = document.createElement("button");
     button.className = "download";
@@ -143,4 +147,3 @@ continueDownload.addEventListener("click", () => {
 });
 
 renderSongs();
-  
